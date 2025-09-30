@@ -1,2 +1,87 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# ==================================================================================
+# Proyecto Unity .gitattributes
+#
+# Esta configuración asegura que los archivos grandes se almacenen en Git LFS
+# y que los archivos de texto se manejen correctamente entre diferentes sistemas
+# operativos (control de finales de línea).
+# ==================================================================================
+
+# Forzar que los archivos de texto de Unity se normalicen siempre con finales de línea LF.
+*.cs texto eol=lf
+*.cginc texto eol=lf
+*.shader texto eol=lf
+*.txt texto eol=lf
+*.md texto eol=lf
+*.json texto eol=lf
+*.xml texto eol=lf
+*.yml texto eol=lf
+
+# Atributos estándar de Git.
+* texto=automático
+
+# ==================================================================================
+# GIT LFS - ARCHIVOS GRANDES
+# Aquí se definen los tipos de archivo que deben ser gestionados por Git LFS.
+# ==================================================================================
+
+# Texturas e Imágenes
+# Formatos comunes de imagen que suelen ser pesados.
+*.png filtro=lfs diff=lfs fusión=lfs -texto
+*.jpg filtro=lfs diff=lfs fusionar=lfs -texto
+*.jpeg filtro=lfs diff=lfs fusionar=lfs -texto
+*.gif filtro=lfs diff=lfs fusionar=lfs -texto
+*.bmp filtro=lfs diff=lfs fusión=lfs -texto
+*.tif filtro=lfs diff=lfs fusión=lfs -texto
+*.tiff filtro=lfs diff=lfs fusión=lfs -texto
+*.tga filtro=lfs diff=lfs fusión=lfs -texto
+*.psd filtro=lfs diff=lfs fusión=lfs -texto
+*.exr filtro=lfs diff=lfs fusión=lfs -texto
+
+# Modelos 3D y Mallas
+# Archivos de modelado 3D, que pueden ocupar mucho espacio.
+*.fbx filtro=lfs diff=lfs fusión=lfs -texto
+*.obj filtro=lfs diff=lfs fusión=lfs -texto
+*.3ds filtro=lfs diff=lfs fusión=lfs -texto
+*.max filtro=lfs diff=lfs fusión=lfs -texto
+*.blend filtro=lfs diff=lfs fusionar=lfs -texto
+*.dae filtro=lfs diff=lfs fusión=lfs -texto
+
+# Audio
+# Archivos de sonido, especialmente si no están comprimidos.
+*.ogg filtro=lfs diff=lfs fusión=lfs -texto
+*.mp3 filtro=lfs diff=lfs fusión=lfs -texto
+*.wav filtro=lfs diff=lfs fusión=lfs -texto
+*.aif filtro=lfs diff=lfs fusión=lfs -texto
+*.aiff filtro=lfs diff=lfs fusión=lfs -texto
+
+# Video
+# Los archivos de vídeo son candidatos perfectos para LFS.
+*.mp4 filtro=lfs diff=lfs fusión=lfs -texto
+*.mov filtro=lfs diff=lfs fusión=lfs -texto
+*.mpg filtro=lfs diff=lfs fusión=lfs -texto
+*.mpeg filtro=lfs diff=lfs fusión=lfs -texto
+*.avi filtro=lfs diff=lfs fusionar=lfs -texto
+*.webm filtro=lfs diff=lfs fusión=lfs -texto
+
+# Fuentes
+# Las fuentes tipográficas también pueden ser archivos binarios grandes.
+*.otf filtro=lfs diff=lfs fusión=lfs -texto
+*.ttf filtro=lfs diff=lfs fusión=lfs -texto
+
+#Archivos de Unity y otros activos 📦
+# Paquetes, escenas, prefabs y otros binarios de Unity.
+*.unity filtro=lfs diff=lfs fusión=lfs -texto
+*.unitypackage filtro=lfs diff=lfs fusión=lfs -texto
+*.prefab filtro=lfs diff=lfs fusión=lfs -texto
+*.asset filtro=lfs diff=lfs fusión=lfs -texto
+*.mat filtro=lfs diff=lfs fusión=lfs -texto
+*.anim filtro=lfs diff=lfs fusionar=lfs -texto
+*.controlador filtro=lfs diff=lfs fusión=lfs -texto
+*.physicmaterial filtro=lfs diff=lfs fusión=lfs -texto
+*.rendertexture filtro=lfs diff=lfs fusionar=lfs -texto
+
+# Documentos y ejecutables
+# Otros archivos que no quieres que Git intente fusionar.
+*.pdf filtro=lfs diff=lfs fusionar=lfs -texto
+*.dll filtro=lfs diff=lfs fusión=lfs -texto
+*.exe filtro=lfs diff=lfs fusión=lfs -texto
